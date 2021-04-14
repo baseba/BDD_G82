@@ -28,6 +28,32 @@ CREATE TABLE Vehiculos (
 );
 -- Tabla Tipos
 
+-- vehiculos frescos
+CREATE TABLE Vehiculos_frescos (
+    alcance int
+)INHERITS (Vehiculos)
+;
+-- vehiculos frio
+CREATE TABLE Vehiculos_frio (
+    q_compartimientos int,
+    id_compartimiento int
+)INHERITS (Vehiculos);
+
+--compartimientos frio
+CREATE TABLE compartimientos (
+    patente int,
+    n_compartimiento int,
+    capacidad_compartiminento int,
+    PRIMARY key (patente, n_compartimiento)
+);
+--
+CREATE TABLE Vehiculos_carga(
+    volumen int,
+    carga_maxima int
+)INHERITS(Vehiculos);
+
+
+
 -- Tabla Personal 
 CREATE TABLE Personal (
     rut int PRIMARY KEY,
