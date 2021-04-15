@@ -81,7 +81,7 @@ CREATE TABLE repartidor (
 -- tabla que asocia vehiculos con repartidores es n:n
 
 CREATE TABLE maneja (
-    id_repartidor int REFERENCES repartidor(rut),
+    id_repartidor int REFERENCES repartidor(rut), -- id = rut?
     id_vehiculo int REFERENCES Vehiculos(patente)
 );
 
