@@ -1,5 +1,5 @@
 -- crear base de datos
--- CREATE DATABASE proyectotest;
+--CREATE DATABASE proyectotest;
 
 -- Crear tablas 
 -- Tabla Usuarios
@@ -62,6 +62,29 @@ CREATE TABLE Personal (
     edad int,
     tipo int
 );
+-- PERSONAL ADMINISTRATIVO
+CREATE TABLE Personal_administrativo (
+    id_unidad int
+)INHERITS(Personal);
+
+-- tabla que asocia personal a dministrativo a ser jefe de alguna unidad es 1:1
+CREATE TABLE es_jefe (
+    id_personal int UNIQUE REFERENCES Personal_administrativo(rut),
+    id_unidad int UNIQUE REFERENCES Unidades(id)
+);
+
+-- PERSONAL REPARTIDOR
+CREATE TABLE repartidor (
+    licencia varchar(30)
+)INHERITS(Personal);
+
+-- tabla que asocia vehiculos con repartidores es n:n
+
+CREATE TABLE maneja (
+    id_repartidor int REFERENCES repartidor(rut),
+    id_vehiculo int REFERENCES Vehiculos(patente)
+);
+
 
 -- Tabla Despachos
 CREATE TABLE Despachos (
