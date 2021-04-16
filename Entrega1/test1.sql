@@ -1,5 +1,5 @@
 -- crear base de datos
---CREATE DATABASE proyectotest;
+--CREATE DATABASE proyecto;
 
 -- Crear tablas 
 -- Tabla Usuarios
@@ -21,36 +21,39 @@ CREATE TABLE Despacha_en (
 
 -- Tablas Vehiculos 
 CREATE TABLE Vehiculos (
-    pantente varchar(6) PRIMARY KEY,
+    patente varchar(6) PRIMARY KEY,
     estado varchar(20),
     tipo varchar(50),
-    categoria int
+    categoria varchar(50),
+    id_unidad int
 );
 -- Tabla Tipos
 
 -- vehiculos frescos
 CREATE TABLE Vehiculos_frescos (
+    patente varchar(6) PRIMARY KEY,
     alcance int
-)INHERITS (Vehiculos)
-;
+);
+
 -- vehiculos frio
 CREATE TABLE Vehiculos_frio (
+    patente varchar(6) PRIMARY KEY,
     q_compartimientos int,
     id_compartimiento int
-)INHERITS (Vehiculos);
+); -- id_compartimiento
 
 --compartimientos frio
 CREATE TABLE compartimientos (
-    patente int,
+    patente varchar(6) PRIMARY KEY,
     n_compartimiento int,
-    capacidad_compartiminento int,
-    PRIMARY key (patente, n_compartimiento)
+    capacidad_compartiminento int
 );
 --
 CREATE TABLE Vehiculos_carga(
     volumen int,
+    patente varchar(6) PRIMARY KEY,
     carga_maxima int
-)INHERITS(Vehiculos);
+);
 
 
 
@@ -64,25 +67,25 @@ CREATE TABLE Personal (
 );
 -- PERSONAL ADMINISTRATIVO
 CREATE TABLE Personal_administrativo (
-    id_unidad int
-)INHERITS(Personal);
-
--- tabla que asocia personal a dministrativo a ser jefe de alguna unidad es 1:1
-CREATE TABLE es_jefe (
-    id_personal int UNIQUE REFERENCES Personal_administrativo(rut),
-    id_unidad int UNIQUE REFERENCES Unidades(id)
+    rut int PRIMARY KEY,
+    id_unidad int,
+    calificacion int,
+    es_jefe int
 );
+
 
 -- PERSONAL REPARTIDOR
 CREATE TABLE repartidor (
+    rut int PRIMARY KEY,
     licencia varchar(30)
-)INHERITS(Personal);
+);
 
 -- tabla que asocia vehiculos con repartidores es n:n
 
 CREATE TABLE maneja (
-    id_repartidor int REFERENCES repartidor(rut), -- id = rut?
-    id_vehiculo int REFERENCES Vehiculos(patente)
+    rut int ,
+    patente varchar(6) ,
+    PRIMARY key (rut, patente)
 );
 
 
@@ -92,6 +95,15 @@ CREATE TABLE Despachos (
     fecha date,
     origen varchar(50),
     destino varchar(50),
+    id_comuna int,
     id_compra int,
-    id_vehiculo int
+    patente_vehiculo varchar(6),
+    rut_repartidor int
+);
+
+-- TABLA DE VEHICULOS POR UNIDAD supuesto vehiculos pueden pertenecer a mas de una unidad
+CREATE TABLE pertenece_unidad (
+    patente_vehiculo int,
+    id_unidad int ,
+    PRIMARY KEY (patente_vehiculo, id_unidad)
 );
