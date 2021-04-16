@@ -14,7 +14,7 @@ AND Unidades.id = Vehiculos.id_unidad;
 -- 3 Muestre todos los veh´ıculos que hayan realizado un despacho a la comuna de ‘Valpara´ıso’ en 2021.
 SELECT vehiculos 
 FROM Despachos, Vehiculos, Comunas
-WHERE Vehiculos.pantente = Despachos.patente_vehiculo
+WHERE Vehiculos.patente = Despachos.patente_vehiculo
 AND Comunas.id = Despachos.id_comuna
 AND Comunas.nombre = 'Valparaiso';
 

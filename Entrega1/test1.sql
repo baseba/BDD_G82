@@ -1,5 +1,5 @@
 -- crear base de datos
-CREATE DATABASE proyectotest;
+--CREATE DATABASE proyecto;
 
 -- Crear tablas 
 -- Tabla Usuarios
@@ -21,7 +21,7 @@ CREATE TABLE Despacha_en (
 
 -- Tablas Vehiculos 
 CREATE TABLE Vehiculos (
-    pantente varchar(6) PRIMARY KEY,
+    patente varchar(6) PRIMARY KEY,
     estado varchar(20),
     tipo varchar(50),
     categoria varchar(50),
@@ -31,27 +31,27 @@ CREATE TABLE Vehiculos (
 
 -- vehiculos frescos
 CREATE TABLE Vehiculos_frescos (
-    pantente varchar(6) PRIMARY KEY,
+    patente varchar(6) PRIMARY KEY,
     alcance int
 );
 
 -- vehiculos frio
 CREATE TABLE Vehiculos_frio (
-    pantente varchar(6) PRIMARY KEY,
+    patente varchar(6) PRIMARY KEY,
     q_compartimientos int,
     id_compartimiento int
 ); -- id_compartimiento
 
 --compartimientos frio
 CREATE TABLE compartimientos (
-    pantente varchar(6) PRIMARY KEY,
+    patente varchar(6) PRIMARY KEY,
     n_compartimiento int,
     capacidad_compartiminento int
 );
 --
 CREATE TABLE Vehiculos_carga(
     volumen int,
-    pantente varchar(6) PRIMARY KEY,
+    patente varchar(6) PRIMARY KEY,
     carga_maxima int
 );
 
