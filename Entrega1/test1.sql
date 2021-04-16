@@ -1,5 +1,5 @@
 -- crear base de datos
---CREATE DATABASE proyectotest;
+CREATE DATABASE proyectotest;
 
 -- Crear tablas 
 -- Tabla Usuarios
@@ -24,7 +24,7 @@ CREATE TABLE Vehiculos (
     pantente varchar(6) PRIMARY KEY,
     estado varchar(20),
     tipo varchar(50),
-    categoria int,
+    categoria varchar(50),
     id_unidad int
 );
 -- Tabla Tipos
@@ -99,4 +99,11 @@ CREATE TABLE Despachos (
     id_compra int,
     patente_vehiculo varchar(6),
     rut_repartidor int
+);
+
+-- TABLA DE VEHICULOS POR UNIDAD supuesto vehiculos pueden pertenecer a mas de una unidad
+CREATE TABLE pertenece_unidad (
+    patente_vehiculo int,
+    id_unidad int ,
+    PRIMARY KEY (patente_vehiculo, id_unidad)
 );
