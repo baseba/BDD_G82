@@ -1,0 +1,14 @@
+hacemos relacion personal y una tabla intermedia que relaciona id personal con id vehiculo
+
+
+unidades estan separadas 
+
+
+##################################################
+instrucciones poblar la base de datos
+
+ 1- sudo -u postgres psql
+ 2- \i tablas.sql
+ 3- \i poblacion.sql
+
+ si se quieren borrar las tablas por cualquier error -> \i reset.sql

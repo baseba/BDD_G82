@@ -22,18 +22,34 @@ CREATE TABLE personal(
     sexo varchar(20),
     edad int,
     clasificacion varchar(50),
-    unidad int,
-    tipo_licencia varchar(50),
-    vehículo int,
     PRIMARY KEY (id)
+);
+CREATE TABLE trabaja_en(
+    id_personal int,
+    unidad int
+);
+
+CREATE TABLE licencia_de(
+    id_personal int,
+    licencia varchar(20)
+);
+
+CREATE TABLE maneja_a(
+    id_personal int,
+    id_vehiculo int
+
 );
 
 CREATE TABLE unidades (
     id int,
     dirección int,
     jefe int,
-    comuna_cobertura varchar(50),
+    --comuna_cobertura varchar(50), -- la comuna de cobertura no es necesariamente la misma que la de la unidad
     PRIMARY KEY (id)
+);
+CREATE TABLE cobertura (
+    id_unidad int,
+    comuna varchar(20)
 );
 
 CREATE TABLE vehiculos (
