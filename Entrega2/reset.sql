@@ -1,0 +1,9 @@
+DROP TABLE despachos;
+DROP TABLE direcciones;
+DROP TABLE personal;
+DROP TABLE unidades;
+DROP TABLE vehiculos;
+DROP TABLE trabaja_en;
+DROP TABLE licencia_de;
+DROP TABLE maneja_a;
+DROP TABLE cobertura;
