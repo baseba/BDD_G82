@@ -10,6 +10,10 @@ licencia_de = []
 maneja_a = []
 unidades = [] ## id , direccoin jefe
 opera_en = [] #id undidad , nombre comuna
+vehiculos=[]
+v_frios =[]
+v_frescos =[]
+v_carga =[]
 
 with open('datos\\ParesV3\\ParesV3\\unidades.csv', mode='r', encoding='utf-8') as csv_file:
     csv_reader = csv.DictReader(csv_file)
@@ -78,3 +82,7 @@ with open("datos\ParesV3\ParesV3\cobertura.csv", mode='w', newline='', encoding=
     writer = csv.writer(csv_file)
     writer.writerow(['id_unidad', 'comuna'])
     writer.writerows(opera_en)
+
+
+## separar tipos de auto
+
