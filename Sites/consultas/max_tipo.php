@@ -20,6 +20,14 @@
   $unidad = $dataCollected[0][0];
   $cantidad = $dataCollected[0][1];
   
+  $query = "SELECT unidades.id, direcciones.nombre_dirección, personal.nombre FROM unidades, personal, direcciones
+  WHERE direcciones.id = unidades.dirección 
+  AND personal.id = unidades.jefe
+  AND unidades.id = $unidad";
+  $result = $db -> prepare($query);
+  $result -> execute();
+  $data_unidad = $result -> fetchAll();
+  
   ?>
 
   <table>
@@ -31,11 +39,9 @@
 
     </tr>
   <?php
-  echo $cantidad;
-  echo $unidad;
-  foreach ($dataCollected as $p) {
-    echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td> <td>$p[4]</td> <td>$p[5]</td><td>$p[6]</td> </tr>";
-  }
+
+ echo "<tr> <td>$unidad</td> <td>$data_unidad[1]</td> <td>$data_unidad[2]</td> <td>$cantidad</td> <td>$p[4]</td> <td>$p[5]</td><td>$p[6]</td> </tr>";
+
   ?>
   </table>
 
