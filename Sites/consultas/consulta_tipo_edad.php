@@ -12,8 +12,8 @@
   WHERE despachos.repartidor = personal.id
   AND despachos.vehiculo = vehiculos.id
   AND vehiculos.tipo = '$tipo'
-  AND personal.edad <= $año1
-  AND personal.edad >= $año2
+  AND personal.edad <= $año2
+  AND personal.edad >= $año1
   ;;";
   $result = $db -> prepare($query);
   $result -> execute();
