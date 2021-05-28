@@ -30,11 +30,14 @@
   <br>
   <br>
 
-  <h3 align="center"> ¿Quieres conocer los Pokemones más altos que: ?</h3>
+  <h3 align="center"> despachos en couna por año</h3>
 
-  <form align="center" action="consultas/consulta_altura.php" method="post">
-    Altura Mínima:
-    <input type="text" name="altura">
+  <form align="center" action="consultas/despacho_comuna_año.php" method="post">
+    Año:
+    <input type="text" name="año">
+    <br/><br/>
+    comuna:
+    <input type="text" name="comuna">
     <br/><br/>
     <input type="submit" value="Buscar">
   </form>
