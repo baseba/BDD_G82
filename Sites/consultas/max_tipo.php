@@ -17,6 +17,10 @@
   $result = $db -> prepare($query);
   $result -> execute();
   $dataCollected = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
+  $unidad = $dataCollected[0][0]
+  $cantidad = $dataCollected[0][1]
+  $query
+  
   ?>
 
   <table>
@@ -28,6 +32,8 @@
 
     </tr>
   <?php
+  echo $cantidad
+  echo $unidad
   foreach ($dataCollected as $p) {
     echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td> <td>$p[4]</td> <td>$p[5]</td><td>$p[6]</td> </tr>";
   }
