@@ -41,7 +41,7 @@
     </tr>
   <?php
 
- echo "<tr> <td>$unidad</td> <td>$data[1]</td> <td>$data[2]</td> </tr>";
+ echo "<tr> <td>$unidad</td> <td>$data[1]</td> <td>$data[2]</td> <td>$cantidad</td></tr>";
 
   ?>
   </table>
