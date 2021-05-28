@@ -96,7 +96,7 @@
       ?>
     <br/><br/>
     Edad superior:
-    <<select name="año2">
+    <select name="año2">
       <?php
       #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
       foreach ($edades as $d) {
