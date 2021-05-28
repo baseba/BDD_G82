@@ -19,7 +19,6 @@
   $dataCollected = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
   $unidad = $dataCollected[0][0]
   $cantidad = $dataCollected[0][1]
-  $query
   
   ?>
 
