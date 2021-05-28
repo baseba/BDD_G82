@@ -70,7 +70,7 @@
   <?php
   #Primero obtenemos edades del personal
   require("config/conexion.php");
-  $result = $db -> prepare("SELECT DISTINCT edad FROM personal;");
+  $result = $db -> prepare("SELECT DISTINCT edad FROM personal ORDER BY edad;");
   $result -> execute();
   $edades = $result -> fetchAll();
   ?>
