@@ -13,12 +13,12 @@
  	$query = "SELECT personal.id , personal.nombre, rut, sexo, edad, clasificacion FROM personal, unidades, cobertura
      WHERE personal.id = unidades.jefe
      AND  unidades.id = cobertura.id_unidad
-     AND cobertura.comuna LIKE lower('%$comuna1%')
+     AND cobertura.comuna LIKE LOWER('%$comuna1%')
      INTERSECT
      SELECT personal FROM personal, unidades, cobertura
      WHERE personal.id = unidades.jefe
      AND  unidades.id = cobertura.id_unidad
-     AND cobertura.comuna LIKE lower('%$comuna2%')
+     AND cobertura.comuna LIKE LOWER('%$comuna2%')
      ;";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
