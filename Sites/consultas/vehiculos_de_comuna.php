@@ -7,11 +7,7 @@
 
   $comuna_elegida = $_POST["comuna_elegida"];
 
- 	$query = "SELECT vehiculos FROM unidades, vehiculos, direcciones
-   WHERE unidades.id = direcciones.id
-   AND vehiculos.unidad = unidades.id
-   AND direcciones.comuna = lower($comuna_elegida)  -- aqui se pone la comuna con lo que dice el pdf
-   ;";
+ 	$query = "SELECT vehiculos FROM unidades, vehiculos, direcciones WHERE unidades.id = direcciones.id AND vehiculos.unidad = unidades.id AND direcciones.comuna = $comuna_elegida  ;";
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$vehiculos = $result -> fetchAll();
