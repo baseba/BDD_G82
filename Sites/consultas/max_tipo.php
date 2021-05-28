@@ -27,6 +27,7 @@
   $result = $db -> prepare($query);
   $result -> execute();
   $data_unidad = $result -> fetchAll();
+  $data = $data_unidad[0]
   
   ?>
 
@@ -40,7 +41,7 @@
     </tr>
   <?php
 
- echo "<tr> <td>$unidad</td> <td>$data_unidad[1]</td> <td>$data_unidad[2]</td> <td>$cantidad</td> <td>$p[4]</td> <td>$p[5]</td><td>$p[6]</td> </tr>";
+ echo "<tr> <td>$unidad</td> <td>$data[1]</td> <td>$data[2]</td> </tr>";
 
   ?>
   </table>
