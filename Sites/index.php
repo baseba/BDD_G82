@@ -30,7 +30,7 @@
   <br>
   <br>
 
-  <h3 align="center"> vehiuculos que despacharon en comuna por año</h3>
+  <h3 align="center"> vehiculos que despacharon en comuna por año</h3>
 
   <form align="center" action="consultas/despacho_comuna_año.php" method="post">
     Año:
@@ -45,7 +45,7 @@
   <br>
   <br>
 
-  <h3 align="center">¿Quieres buscar todos los pokemones por tipo?</h3>
+  <h3 align="center">despachos realizados por un tipo de vehiculo cuyo repartidor tiene entre el rango seleccionado</h3>
 
   <?php
   #Primero obtenemos todos los tipos de pokemones
@@ -55,7 +55,7 @@
   $dataCollected = $result -> fetchAll();
   ?>
 
-  <form align="center" action="consultas/consulta_tipo.php" method="post">
+  <form align="center" action="consultas/consulta_tipo_edad.php" method="post">
     Seleccinar un tipo:
     <select name="tipo">
       <?php
@@ -66,6 +66,12 @@
       ?>
     </select>
     <br><br>
+    Edad inferior:
+    <input type="int" name="año">
+    <br/><br/>
+    Edad superior:
+    <input type="int" name="año">
+    <br/><br/>
     <input type="submit" value="Buscar por tipo">
   </form>
 

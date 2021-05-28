@@ -23,7 +23,7 @@ AND despachos.fecha::text LIKE '2021-%'   --- poder elegir año
 SELECT despachos FROM despachos, vehiculos, personal 
 WHERE despachos.repartidor = personal.id
 AND despachos.vehiculo = vehiculos.id
-AND vehiculos.tipo = 'moto'  -- elegir edades y tipo de vehiculo
+AND vehiculos.tipo = 'moto'
 AND personal.edad <= 39
 AND personal.edad >= 20
 ;
