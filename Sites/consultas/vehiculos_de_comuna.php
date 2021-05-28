@@ -12,16 +12,20 @@
 	$result -> execute();
 	$vehiculos = $result -> fetchAll();
   ?>
-  <?php 
-  echo $comuna_elegida
-  ?>
+
 	<table>
     <tr>
-      <th>Vehiculo</th>
+      <th>id vehiculo</th>
+    
+      <th>patente</th>
+    
+      <th>estado</th>
+    
+      <th>tipo</th>
     </tr>
   <?php
 	foreach ($vehiculos as $vehiculo) {
-  		echo "<tr><td>$vehiculo[0]</td></tr>hola";
+  		echo "<tr><td>$vehiculo[0]</td><td>$vehiculo[1]</td><td>$vehiculo[2]</td><td>$vehiculo[3]</td></tr>";
 	}
   ?>
 	</table>
