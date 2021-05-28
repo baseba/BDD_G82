@@ -78,6 +78,21 @@
   <br>
   <br>
   <br>
+
+  <h3 align="center"> jefes de unidades que realizan despachos a dos comunas</h3>
+
+  <form align="center" action="consultas/jefes_comunas.php" method="post">
+    Año:
+    <input type="text" name="comuna1">
+    <br/><br/>
+    comuna:
+    <input type="text" name="comuna2">
+    <br/><br/>
+    <input type="submit" value="Buscar">
+  </form>
+  <br>
+  <br>
+  <br>
   <br>
 </body>
 </html>
