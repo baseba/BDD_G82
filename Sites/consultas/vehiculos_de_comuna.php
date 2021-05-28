@@ -12,7 +12,9 @@
 	$result -> execute();
 	$vehiculos = $result -> fetchAll();
   ?>
-
+  <?php 
+  echo $comuna_elegida
+  ?>
 	<table>
     <tr>
       <th>Vehiculo</th>
