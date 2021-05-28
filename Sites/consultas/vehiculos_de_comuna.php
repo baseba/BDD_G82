@@ -14,21 +14,16 @@
    ;";
 	$result = $db -> prepare($query);
 	$result -> execute();
-	$pokemones = $result -> fetchAll();
+	$vehiculos = $result -> fetchAll();
   ?>
 
 	<table>
     <tr>
-      <th>ID</th>
-      <th>Nombre</th>
-      <th>Altura</th>
-      <th>Peso</th>
-      <th>Experiencia Base</th>
-      <th>Tipo</th>
+      <th>Vehiculo</th>
     </tr>
   <?php
-	foreach ($pokemones as $pokemon) {
-  		echo "<tr><td>$pokemon[0]</td><td>$pokemon[1]</td><td>$pokemon[2]</td><td>$pokemon[3]</td><td>$pokemon[4]</td><td>$pokemon[5]</td></tr>";
+	foreach ($vehiculos as $vehiculo) {
+  		echo "<tr><td>$vehiculo[0]</td></tr>";
 	}
   ?>
 	</table>
