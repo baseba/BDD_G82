@@ -6,8 +6,8 @@
   require("../config/conexion.php"); #Llama a conexión, crea el objeto PDO y obtiene la variable $db
 
   $tipo = $_POST["tipo"];
-  $año1 = $_POST["tipo"];
-  $año2 = $_POST["tipo"];
+  $año1 = $_POST["año1"];
+  $año2 = $_POST["año2"];
   $query = "SELECT despachos.id, despachos.fecha, despachos.dirección_origen, despachos.dirección_destino, despachos.id_compra, despachos.vehiculo, despachos.repartidor FROM despachos, vehiculos, personal 
   WHERE despachos.repartidor = personal.id
   AND despachos.vehiculo = vehiculos.id

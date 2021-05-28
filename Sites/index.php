@@ -67,10 +67,10 @@
     </select>
     <br><br>
     Edad inferior:
-    <input type="int" name="año">
+    <input type="int" name="año1">
     <br/><br/>
     Edad superior:
-    <input type="int" name="año">
+    <input type="int" name="año2">
     <br/><br/>
     <input type="submit" value="Buscar por tipo">
   </form>
