@@ -30,7 +30,7 @@
   <br>
   <br>
 
-  <h3 align="center"> despachos en couna por año</h3>
+  <h3 align="center"> vehiuculos que despacharon en comuna por año</h3>
 
   <form align="center" action="consultas/despacho_comuna_año.php" method="post">
     Año:
@@ -50,7 +50,7 @@
   <?php
   #Primero obtenemos todos los tipos de pokemones
   require("config/conexion.php");
-  $result = $db -> prepare("SELECT DISTINCT tipo FROM pokemones;");
+  $result = $db -> prepare("SELECT DISTINCT tipo FROM vehiculos;");
   $result -> execute();
   $dataCollected = $result -> fetchAll();
   ?>
