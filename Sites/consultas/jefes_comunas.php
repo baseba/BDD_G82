@@ -15,7 +15,7 @@
      AND  unidades.id = cobertura.id_unidad
      AND cobertura.comuna LIKE LOWER('%$comuna1%')
      INTERSECT
-     SELECT personal FROM personal, unidades, cobertura
+     SELECT personal.id , personal.nombre, rut, sexo, edad, clasificacion FROM personal, unidades, cobertura
      WHERE personal.id = unidades.jefe
      AND  unidades.id = cobertura.id_unidad
      AND cobertura.comuna LIKE LOWER('%$comuna2%')
