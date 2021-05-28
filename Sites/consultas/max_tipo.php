@@ -7,10 +7,9 @@
 
   $tipo = $_POST["tipo"];
 
-  $query = "SELECT unidades.id,  COUNT(vehiculos.id) AS cantidad from vehiculos, unidades
+  $query = "SELECT unidades.id, COUNT(vehiculos.id) AS cantidad from vehiculos, unidades
   WHERE vehiculos.unidad = unidades.id
-  AND unidades.dirección = direcciones.id
-  AND vehiculos.tipo = '$tipo'  
+  AND vehiculos.tipo = '$tipo'
   GROUP BY unidades.id
   ORDER BY cantidad DESC
   LIMIT 1
