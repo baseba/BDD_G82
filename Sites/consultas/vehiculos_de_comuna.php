@@ -5,9 +5,13 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-  $id_nuevo = $_POST["id_elegido"];
+  $comuna_elegida = $_POST["comuna_elegida"];
 
- 	$query = "SELECT * FROM pokemones where pid = $id_nuevo;";
+ 	$query = "SELECT vehiculos FROM unidades, vehiculos, direcciones
+   WHERE unidades.id = direcciones.id
+   AND vehiculos.unidad = unidades.id
+   AND lower(direcciones.comuna) LIKE %$comuna_elegida%  -- aqui se pone la comuna con lo que dice el pdf
+   ;";
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$pokemones = $result -> fetchAll();

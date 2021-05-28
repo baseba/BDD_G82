@@ -19,9 +19,9 @@
 
   <h3 align="center"> ¿Quieres buscar un Pokemón por su ID?</h3>
 
-  <form align="center" action="consultas/consulta_stats.php" method="post">
+  <form align="center" action="consultas/vehiculos_de_comuna.php" method="post">
     Id:
-    <input type="text" name="id_elegido">
+    <input type="text" name="comuna_elegida">
     <br/><br/>
     <input type="submit" value="Buscar">
   </form>
