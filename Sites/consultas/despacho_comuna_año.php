@@ -7,7 +7,7 @@
 
   #Se obtiene el valor del input del usuario
   $año = $_POST["año"];
-  $comuna = $_POST["comuna"]
+  $comuna = $_POST["comuna"];
 
   #Se construye la consulta como un string
  	$query = "SELECT vehiculos.id, vehiculos.patente, vehiculos.estado, vehiculos.tipo FROM direcciones, despachos, vehiculos WHERE despachos.dirección_destino = direcciones.id AND despachos.vehiculo = vehiculos.id AND direcciones.comuna LIKE '%$comuna%'  AND despachos.fecha::text LIKE '$año-%' ; ";
