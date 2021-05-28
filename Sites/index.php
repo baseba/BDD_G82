@@ -20,7 +20,7 @@
   <h3 align="center"> Buscar vehiculos por comuna</h3>
 
   <form align="center" action="consultas/vehiculos_de_comuna.php" method="post">
-    Id:
+    Comuna:
     <input type="text" name="comuna_elegida">
     <br/><br/>
     <input type="submit" value="Buscar">
