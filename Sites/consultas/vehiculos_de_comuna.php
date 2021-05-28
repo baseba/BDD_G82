@@ -10,7 +10,7 @@
  	$query = "SELECT vehiculos FROM unidades, vehiculos, direcciones
    WHERE unidades.id = direcciones.id
    AND vehiculos.unidad = unidades.id
-   AND lower(direcciones.comuna) LIKE %$comuna_elegida%  -- aqui se pone la comuna con lo que dice el pdf
+   AND lower(direcciones.comuna) LIKE lower("%$comuna_elegida%")  -- aqui se pone la comuna con lo que dice el pdf
    ;";
 	$result = $db -> prepare($query);
 	$result -> execute();

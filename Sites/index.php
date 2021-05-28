@@ -17,7 +17,7 @@
   <br>
   <br>
 
-  <h3 align="center"> ¿Quieres buscar un Pokemón por su ID?</h3>
+  <h3 align="center"> Buscar vehiculos por comuna</h3>
 
   <form align="center" action="consultas/vehiculos_de_comuna.php" method="post">
     Id:
