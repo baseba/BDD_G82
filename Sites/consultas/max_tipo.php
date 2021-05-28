@@ -7,12 +7,11 @@
 
   $tipo = $_POST["tipo"];
 
-  $query = "SELECT unidades.id, direcciones.nombre_dirección, personal.nombre,  COUNT(vehiculos.id) AS cantidad from vehiculos, unidades, personal
+  $query = "SELECT unidades.id,  COUNT(vehiculos.id) AS cantidad from vehiculos, unidades
   WHERE vehiculos.unidad = unidades.id
   AND unidades.dirección = direcciones.id
-  AND personal.id = unidades.jefe
   AND vehiculos.tipo = '$tipo'  
-  GROUP BY unidades.id, direcciones.nombre_dirección, personal.nombre
+  GROUP BY unidades.id
   ORDER BY cantidad DESC
   LIMIT 1
   ;";
@@ -27,10 +26,11 @@
       <th>dirección</th>
       <th>jefe</th>
       <th>cantidad de vehiculos del tipo seleccionado</th>
+
     </tr>
   <?php
   foreach ($dataCollected as $p) {
-    echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td></tr>";
+    echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td> <td>$p[4]</td> <td>$p[5]</td><td>$p[6]</td> </tr>";
   }
   ?>
   </table>
