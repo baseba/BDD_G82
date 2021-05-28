@@ -23,7 +23,7 @@
     </tr>
   <?php
 	foreach ($vehiculos as $vehiculo) {
-  		echo "<tr><td>$vehiculo[0]</td></tr>";
+  		echo "<tr><td>$vehiculo[0]</td></tr>hola";
 	}
   ?>
 	</table>
