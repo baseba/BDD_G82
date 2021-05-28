@@ -94,6 +94,7 @@
         echo "<option value=$d[0]>$d[0]</option>";
       }
       ?>
+      </select>
     <br/><br/>
     Edad superior:
     <select name="año2">
@@ -103,6 +104,7 @@
         echo "<option value=$d[0]>$d[0]</option>";
       }
       ?>
+      </select>
     <br/><br/>
     <input type="submit" value="Buscar por tipo">
   </form>
