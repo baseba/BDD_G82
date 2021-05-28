@@ -106,7 +106,7 @@
       ?>
       </select>
     <br/><br/>
-    <input type="submit" value="Buscar por tipo">
+    <input type="submit" value="Buscar">
   </form>
 
   <br>
@@ -138,7 +138,7 @@ $dataCollected = $result -> fetchAll();
 ?>
 
 <form align="center" action="consultas/max_tipo.php" method="post">
-  Seleccinar un tipo:
+  Seleccionar un tipo:
   <select name="tipo">
     <?php
     #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
@@ -148,7 +148,7 @@ $dataCollected = $result -> fetchAll();
     ?>
   </select>
   <br/><br/>
-  <input type="submit" value="Buscar por tipo">
+  <input type="submit" value="Buscar">
 </form>
 
 <br>
