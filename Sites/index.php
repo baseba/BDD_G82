@@ -31,11 +31,24 @@
   <br>
 
   <h3 align="center"> vehiculos que despacharon en comuna por año</h3>
-
+  <?php
+  #Primero obtenemos todos los años
+  require("config/conexion.php");
+  $result = $db -> prepare("SELECT DISTINCT EXTRACT(YEAR FROM despachos.fecha) FROM despachos;");
+  $result -> execute();
+  $años_despachos = $result -> fetchAll();
+  ?>
   <form align="center" action="consultas/despacho_comuna_año.php" method="post">
     Año:
-    <input type="text" name="año">
-    <br/><br/>
+    <select name="año">
+      <?php
+      #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
+      foreach ($años_despachos as $d) {
+        echo "<option value=$d[0]>$d[0]</option>";
+      }
+      ?>
+    </select>
+    <br><br>
     comuna:
     <input type="text" name="comuna">
     <br/><br/>
@@ -53,6 +66,13 @@
   $result = $db -> prepare("SELECT DISTINCT tipo FROM vehiculos;");
   $result -> execute();
   $dataCollected = $result -> fetchAll();
+  ?>
+  <?php
+  #Primero obtenemos edades del personal
+  require("config/conexion.php");
+  $result = $db -> prepare("SELECT DISTINCT edad FROM persoanl;");
+  $result -> execute();
+  $edades = $result -> fetchAll();
   ?>
 
   <form align="center" action="consultas/consulta_tipo_edad.php" method="post">
