@@ -1,5 +1,5 @@
 <?php
-  $user = 'postgres';
-  $password = 'postgres';
-  $databaseName = 'entrega2_v1';
+  $user = 'grupo82';
+  $password = 'grupo82';
+  $databaseName = 'grupo82e2';
 ?>
