@@ -87,10 +87,22 @@
     </select>
     <br><br>
     Edad inferior:
-    <input type="int" name="año1">
+    <select name="año1">
+      <?php
+      #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
+      foreach ($edades as $d) {
+        echo "<option value=$d[0]>$d[0]</option>";
+      }
+      ?>
     <br/><br/>
     Edad superior:
-    <input type="int" name="año2">
+    <<select name="año2">
+      <?php
+      #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
+      foreach ($edades as $d) {
+        echo "<option value=$d[0]>$d[0]</option>";
+      }
+      ?>
     <br/><br/>
     <input type="submit" value="Buscar por tipo">
   </form>
