@@ -31,8 +31,8 @@
 
     </tr>
   <?php
-  echo $cantidad
-  echo $unidad
+  echo $cantidad;
+  echo $unidad;
   foreach ($dataCollected as $p) {
     echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td> <td>$p[4]</td> <td>$p[5]</td><td>$p[6]</td> </tr>";
   }
