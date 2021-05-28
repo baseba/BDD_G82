@@ -8,9 +8,9 @@
 
   <h3 align="center"> Ver direcciones de Unidades de despacho</h3>
 
-  <form align="center" action="consultas/consulta_tipo_nombre.php" method="post">
+  <form align="center" action="consultas/direcciones_unidades.php" method="post">
     <br/><br/>
-    <input type="submit" value="Buscar">
+    <input type="submit" value="Direcciones">
   </form>
   
   <br>
